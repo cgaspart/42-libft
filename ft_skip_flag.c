@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_skip_flag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:26:19 by cgaspart          #+#    #+#             */
-/*   Updated: 2017/11/10 09:35:02 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/02/22 10:23:33 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/02/22 10:23:36 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+int		ft_skip_flag(int argc, char **argv)
 {
 	int i;
 
-	i = 0;
-	while (src[i] != '\0')
+	i = 1;
+	while (i < argc)
 	{
-		dest[i] = src[i];
-		i++;
+		if (argv[i][0] == '-' && argv[i][1] == '\0')
+			return (i);
+		else if (argv[i][0] == '-' && argv[i][1] == '-')
+			return (i + 1);
+		else if (argv[i][0] == '-')
+			i++;
+		else
+			break ;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }

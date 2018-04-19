@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_space.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:26:19 by cgaspart          #+#    #+#             */
-/*   Updated: 2017/11/10 09:35:02 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/01/30 07:12:40 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/01/30 08:30:28 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
-{
-	int i;
+#include "libft.h"
 
-	i = 0;
-	while (src[i] != '\0')
+void	ft_print_space(int maxspace, int len)
+{
+	if (len != 0)
 	{
-		dest[i] = src[i];
-		i++;
+		while (len >= 1 && maxspace > 0)
+		{
+			len--;
+			maxspace--;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
+	else
+		maxspace--;
+	while (maxspace)
+	{
+		ft_putchar(' ');
+		maxspace--;
+	}
 }

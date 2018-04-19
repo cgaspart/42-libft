@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_issame.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:26:19 by cgaspart          #+#    #+#             */
-/*   Updated: 2017/11/10 09:35:02 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/02/03 10:28:44 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/02/03 10:30:31 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+#include "libft.h"
+
+int		ft_issame(char *first, char *second)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	if (ft_strlen(first) != ft_strlen(second))
+		return (0);
+	while (first[i] != '\0' && second[i] != '\0')
 	{
-		dest[i] = src[i];
+		if (first[i] != second[i])
+			return (0);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (1);
 }

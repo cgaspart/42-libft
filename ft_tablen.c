@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tablen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:26:19 by cgaspart          #+#    #+#             */
-/*   Updated: 2017/11/10 09:35:02 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/02/28 15:52:56 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/02/28 15:52:59 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+#include "libft.h"
+
+int		ft_tablen(char **tab)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
+	while (tab[i])
 		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	return (i);
 }

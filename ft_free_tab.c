@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_free_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/10 09:26:19 by cgaspart          #+#    #+#             */
-/*   Updated: 2017/11/10 09:35:02 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/03/15 17:36:42 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/04/05 15:44:42 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, const char *src)
+#include "libft.h"
+
+void	ft_free_tab(char **tab)
 {
 	int i;
 
 	i = 0;
-	while (src[i] != '\0')
+	if (tab != NULL)
 	{
-		dest[i] = src[i];
-		i++;
+		while (tab[i])
+		{
+			if (tab[i] != NULL)
+			{
+				free(tab[i]);
+				tab[i] = NULL;
+			}
+			i++;
+		}
+		free(tab);
+		tab = NULL;
 	}
-	dest[i] = '\0';
-	return (dest);
 }

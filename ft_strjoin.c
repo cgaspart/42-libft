@@ -6,7 +6,7 @@
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/15 11:56:45 by cgaspart          #+#    #+#             */
-/*   Updated: 2018/01/09 17:49:54 by cgaspart         ###   ########.fr       */
+/*   Updated: 2018/01/31 13:48:34 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	len = (ft_strlen(s1) + ft_strlen(s2) + 1);
-	fraiche = (char *)malloc(sizeof(char) * len);
-	ft_strcpy(fraiche, s1);
-	ft_strcpy(fraiche + ft_strlen(s1), s2);
+	fraiche = ft_memalloc(len);
 	if (fraiche == NULL)
 		return (NULL);
+	ft_strcat(fraiche, s1);
+	ft_strcat(fraiche, s2);
+	fraiche[len] = '\0';
 	return (fraiche);
 }
