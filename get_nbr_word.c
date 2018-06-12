@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_nbr_word.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/29 09:21:39 by cgaspart          #+#    #+#             */
-/*   Updated: 2018/04/30 10:34:28 by cgaspart         ###   ########.fr       */
+/*   Created: 2018/05/03 14:16:36 by cgaspart          #+#    #+#             */
+/*   Updated: 2018/05/03 14:16:39 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-# define BUFF_SIZE 32
-
-typedef struct		s_slot
+int		get_nbr_word(char *str)
 {
-	char			*save;
-	int				fd;
-	struct s_slot	*next;
-}					t_slot;
+	int i;
+	int nbr;
 
-int					get_next_line(const int fd, char **line);
-
-#endif
+	i = 0;
+	if (str == NULL)
+		return (0);
+	nbr = 1;
+	while (str[i])
+	{
+		if (str[i] == ' ' || str[i] == '\t')
+			nbr++;
+		i++;
+	}
+	return (nbr);
+}

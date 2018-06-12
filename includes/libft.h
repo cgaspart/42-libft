@@ -6,7 +6,7 @@
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 10:41:15 by cgaspart          #+#    #+#             */
-/*   Updated: 2018/06/12 07:20:37 by cgaspart         ###   ########.fr       */
+/*   Updated: 2018/06/12 07:23:10 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,4 +110,7 @@ int					ft_putstr_b(t_buffer *my_buffer, char *str);
 int					ft_addstr_b(t_buffer *my_buffer, char *str);
 void				rm_lastpath_b(t_buffer *path);
 void				ft_rm_b_path(t_buffer *my_buffer);
+int					get_nbr_word(char *str);
+char				ft_type(char *dirname);
+char				**ft_split_whitespaces(char *s);
 #endif

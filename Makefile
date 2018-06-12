@@ -6,7 +6,7 @@
 #    By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/09 10:42:03 by cgaspart          #+#    #+#              #
-#    Updated: 2018/04/30 10:25:45 by cgaspart         ###   ########.fr        #
+#    Updated: 2018/04/30 08:29:04 by cgaspart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,10 @@ SRC_NAME = ft_putchar.c\
 	  ft_str_fjoin.c\
 	  ft_buffer.c\
 	  ft_strrealloc.c\
-	  get_next_line.c
+	  get_next_line.c\
+	  get_nbr_word.c\
+	  ft_type.c\
+	  ft_split_whitespaces.c
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
