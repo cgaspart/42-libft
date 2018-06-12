@@ -6,7 +6,7 @@
 /*   By: cgaspart <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 10:41:15 by cgaspart          #+#    #+#             */
-/*   Updated: 2018/06/12 07:20:37 by cgaspart         ###   ########.fr       */
+/*   Updated: 2018/04/30 08:26:55 by cgaspart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "get_next_line.h"
 
 typedef struct		s_list
 {
@@ -110,4 +109,7 @@ int					ft_putstr_b(t_buffer *my_buffer, char *str);
 int					ft_addstr_b(t_buffer *my_buffer, char *str);
 void				rm_lastpath_b(t_buffer *path);
 void				ft_rm_b_path(t_buffer *my_buffer);
+int					get_nbr_word(char *str);
+char				ft_type(char *dirname);
+char				**ft_split_whitespaces(char *s);
 #endif
